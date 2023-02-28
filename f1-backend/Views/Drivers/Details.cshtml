@@ -1,0 +1,47 @@
+﻿@model Formula1TeamApp.Models.Driver
+
+@{
+    ViewData["Title"] = "Kontraktsdetaljer";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h4>Förare</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Salary)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Salary)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ImageName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ImageName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Team)
+        </dt>
+        <dd class="col-sm-10">
+            @{
+                if (Model.Team != null)
+                {
+                    <p>@Model.Team.Name</p>
+                }
+            }
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.DriverId">Redigera</a> |
+    <a asp-action="Index">Tillbaks till listan</a>
+</div>

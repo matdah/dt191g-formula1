@@ -1,0 +1,18 @@
+.container {
+    margin-top: 2em;
+}
+
+article {
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 1em;
+}
+
+article img {
+    width: 100%;
+    max-width: 250px;
+    float: left;
+    margin: 0 1em 1em 0;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}

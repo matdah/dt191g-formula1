@@ -1,0 +1,26 @@
+﻿@model Formula1TeamApp.Models.Team
+
+@{
+    ViewData["Title"] = "Radera team";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h3>Är du säker på att du vill radera @Html.DisplayFor(model => model.Name)?</h3>
+<br>
+<div>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="TeamId" />
+        <input type="submit" value="Radera" class="btn btn-danger" /> |
+        <a asp-action="Index">Tillbaka till listan</a>
+    </form>
+</div>

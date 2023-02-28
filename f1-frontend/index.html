@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula 1 - Teams och förare</title>
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <!-- Milligram CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- You should properly set the path from the main file. -->
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Formula1 - Frontend-app</h1>
+        <main id="app">
+            <h2>Förare</h2>
+            <article v-for="driver in drivers" :key="driver.id">
+                <picture>
+                    <source :srcset="driver.imageWebp" type="image/webp">
+                    <source :srcset="driver.imageName" type="image/jpeg">
+                    <img :src="driver.imageName" :alt="driver.name">
+                </picture>
+                <h3>{{ driver.name }}</h3>
+                <p><strong>Lön:</strong> {{ driver.salary }} miljoner kronor.</p>
+                <p><strong>Team:</strong> {{ driver.teamName }}</p>
+                
+                <div style="clear: both;"></div>
+            </article>
+        </main>
+    </div>
+
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

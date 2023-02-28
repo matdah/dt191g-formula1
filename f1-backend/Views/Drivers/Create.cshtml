@@ -1,0 +1,52 @@
+﻿@model Formula1TeamApp.Models.Driver
+
+@{
+    ViewData["Title"] = "Skapa kontrakt";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h4>Förare</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <br>
+            <div class="form-group">
+                <label asp-for="Salary" class="control-label"></label>
+                <input asp-for="Salary" class="form-control" />
+                <span asp-validation-for="Salary" class="text-danger"></span>
+            </div>
+            <br>
+            <div class="form-group">
+                <label asp-for="ImageFile" class="control-label">Porträtt-foto</label>
+                <input asp-for="ImageFile" accept="image/*" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+            <br>
+            <div class="form-group">
+                <label asp-for="TeamId" class="control-label"></label>
+                <select asp-for="TeamId" class ="form-control" asp-items="ViewBag.TeamId"></select>
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="submit" value="Skapa kontrakt" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <br>
+    <a asp-action="Index">Tillbaks till listan</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

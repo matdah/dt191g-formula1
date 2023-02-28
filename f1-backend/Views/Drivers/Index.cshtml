@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Formula1TeamApp.Models.Driver>
+
+@{
+    ViewData["Title"] = "Förare";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create">Signa ny förare</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Team)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageName)
+            </td>
+            <td>
+                @if(item.Team != null)
+                {
+                    @Html.DisplayFor(modelItem => item.Team.Name)
+                }
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.DriverId">Redigera</a> |
+                <a asp-action="Details" asp-route-id="@item.DriverId">Detaljer</a> |
+                <a asp-action="Delete" asp-route-id="@item.DriverId">Radera</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
