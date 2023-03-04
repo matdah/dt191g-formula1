@@ -19,7 +19,7 @@
                 @Html.DisplayNameFor(model => model.Salary)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ImageName)
+                Bild
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Team)
@@ -37,7 +37,7 @@
                 @Html.DisplayFor(modelItem => item.Salary)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ImageName)
+                <a href="driverimages/@Html.DisplayFor(modelItem => item.ImageName)" target="_blank"><img style="width: 60px; height: 60%; background-size: cover; border-radius: 50%;" src="driverimages/thumb_@Html.DisplayFor(modelItem => item.ImageName)" /></a>
             </td>
             <td>
                 @if(item.Team != null)
