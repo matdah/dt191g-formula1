@@ -15,7 +15,7 @@ namespace Formula1TeamApp.Controllers {
             _context = context;
         }
 
-        // GET: api/TeamsApi
+        // GET: api/teams/test
         [HttpGet]
         [Route("test")]
         public IActionResult Test()
