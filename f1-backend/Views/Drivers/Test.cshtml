@@ -1,0 +1,17 @@
+@model List<Formula1TeamApp.Models.Driver>
+
+@{
+    ViewData["Title"] = "Driver - Test";
+}
+
+<h2>Test-data</h2>
+<p>Förare med mer än 200 miljoner i lön:</p>
+<ul>
+@foreach(var driver in Model) {
+    
+        <li><strong>@driver.Name</strong> - @driver.Salary miljoner kronor</li>
+}
+</ul>
+
+
+<a asp-action="Index">Tillbaks till listan</a>

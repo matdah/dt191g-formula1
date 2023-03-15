@@ -54,6 +54,28 @@ namespace Formula1TeamApp.Controllers
             return View(driver);
         }
 
+        // Test
+        public IActionResult Test()
+        {
+            var drivers = _context.Drivers
+                .Where(c => c.Salary > 199)
+                .Select(c => c)
+                .ToList();
+            
+            // Get driver by id
+            var driver = _context.Drivers
+                .Where(c => c.DriverId == 4)
+                .Select(c => c)
+                .FirstOrDefault();
+            
+            // Add to list
+            if(driver != null) {
+                drivers.Add(driver);
+            }           
+
+            return View(drivers);
+        }
+
         // GET: Drivers/Create
         public IActionResult Create()
         {
